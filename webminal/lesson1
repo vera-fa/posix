@@ -1,0 +1,33 @@
+[verania@webm
+inal.org ~]$p
+wd           
+/home/verania
+[verania@webminal.org ~] mkdir -v dir1
+mkdir: created directory ‘dir1’                                                       
+[verania@webminal.org ~]$mkdir -vp dir2 / dir3 / dir4                                 
+mkdir: created directory ‘dir2’
+mkdir: created directory ‘dir3’
+mkdir: created directory ‘dir4’
+[verania@webminal.org ~]$ls
+dir1  dir2  dir3  dir4
+[verania@webminal.org ~]$ls -R
+.:           
+dir1  dir2  dir3  dir4
+             
+./dir1:      
+             
+./dir2:      
+             
+./dir3:      
+             
+./dir4:      
+[verania@webminal.org ~]$cd dir2                                                      
+[verania@webminal.org dir2]$pwd
+/home/verania/dir2
+[verania@webminal.org dir2]$cd
+[verania@webminal.org ~]$cd dir3
+[verania@webminal.org dir3]$cd ..                                                     
+[verania@webminal.org ~]$cd -
+/home/verania/dir3                                                                    
+[verania@webminal.org dir3]$cd                                                        
+[verania@webminal.org ~]$
