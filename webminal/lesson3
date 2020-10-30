@@ -1,0 +1,74 @@
+[verania@webminal.org ~]$echo "hello"                                                 
+hello
+[verania@webminal.org ~]$echo "hello" > hello.txt                                     
+[verania@webminal.org ~]$echo "linux" >> hello.txt                                    
+[verania@webminal.org ~]$echo "world" >> hello.txt                                    
+[verania@webminal.org ~]$cat hello.txt                                                
+hello
+linux
+world
+[verania@webminal.org ~]$head -2 hello.txt                                            
+hello
+[verania@webminal.org ~]$du
+0       ./dir1
+0       ./dir2
+0       ./dir3
+0       ./dir4
+36K     .
+[verania@webminal.org ~] du -xh ~                                                     
+0       /home/verania/dir1
+0       /home/verania/dir2
+0       /home/verania/dir3
+0       /home/verania/dir4
+36K     /home/verania
+[verania@webminal.org ~]$du --max-depth 3 ~
+0       /home/verania/dir1
+0       /home/verania/dir2
+0       /home/verania/dir3
+0       /home/verania/dir4
+36K     /home/verania
+[verania@webminal.org ~]$cp -v hello.txt dir2                                         
+‘hello.txt’ -> ‘dir2/hello.txt’
+[verania@webminal.org ~]$cp -v hello.txt dir2/file2.txt
+‘hello.txt’ -> ‘dir2/file2.txt’
+[verania@webminal.org ~]$cp -v hello.txt dir2/dir3                                    
+‘hello.txt’ -> ‘dir2/dir3’
+[verania@webminal.org ~]$cp -vr dir2/*.txt dir2/dir3                                  
+cp: target ‘dir2/dir3’ is not a directory
+[verania@webminal.org ~]$cp -vr dir2/dir3                                             
+cp: missing destination file operand after ‘dir2/dir3’
+Try 'cp --help' for more information.
+[verania@webminal.org ~]$ls
+dir1  dir2  dir3  dir4  file1.txtx  file2.txtx  hello.txt
+[verania@webminal.org ~]$md5sum hello.txt                                             
+b8d5079c5d6a9dbb3294b31d318d74c0  hello.txt                                           
+[verania@webminal.org ~]$md5sum dir2/hello.txt                                        
+b8d5079c5d6a9dbb3294b31d318d74c0  dir2/hello.txt                                      
+[verania@webminal.org ~]$mv hello.txt dir2/dir3/dir4/hi.txt                           
+mv: failed to access ‘dir2/dir3/dir4/hi.txt’: Not a directory                         
+[verania@webminal.org ~]$mkdir dir5                                                   
+[verania@webminal.org ~]$mv dir2/*.txt dir5                                           
+[verania@webminal.org ~]$mv dir5 dir50                                                
+[verania@webminal.org ~]$ln dir2/dir3/dir4/hi.txt hello                               
+ln: failed to access ‘dir2/dir3/dir4/hi.txt’: Not a directory                         
+[verania@webminal.org ~]$stat hello                                                   
+stat: cannot stat ‘hello’: No such file or directory                                  
+[verania@webminal.org ~]$stat dir2/dir3/dir4/hi.txt                                   
+stat: cannot stat ‘dir2/dir3/dir4/hi.txt’: Not a directory                            
+[verania@webminal.org ~]$ln -s dir2/dir3/dir4/hi.txt softlink                         
+[verania@webminal.org ~]$stat softlink                                                
+  File: ‘softlink’ -> ‘dir2/dir3/dir4/hi.txt’                                         
+  Size: 21              Blocks: 0          IO Block: 4096   symbolic link             
+Device: 821h/2081d      Inode: 90768451    Links: 1                                   
+Access: (0777/lrwxrwxrwx)  Uid: (221364/ verania)   Gid: (221423/ verania)            
+Context: guest_u:object_r:user_home_t:s0                                              
+Access: 2020-10-30 18:58:28.290000000 +0100                                           
+Modify: 2020-10-30 18:58:28.290000000 +0100                                           
+Change: 2020-10-30 18:58:28.290000000 +0100                                           
+ Birth: -                                                                             
+[verania@webminal.org ~]$rm -i file2.txt                                              
+rm: cannot remove ‘file2.txt’: No such file or directory                              
+[verania@webminal.org ~]$rm -ri dir50/*                                               
+rm: remove regular file ‘dir50/file2.txt’? rm -rf junk/*                            
+rm: remove regular file ‘dir50/hello.txt’? rmdir dir50                                
+[verania@webminal.org ~]$     
