@@ -1,0 +1,41 @@
+[verania@webminal.org ~]$echo "hello"                                                 
+hello
+[verania@webminal.org ~]$echo "hello" > hello.txt                                     
+[verania@webminal.org ~]$echo "linux" >> hello.txt                                    
+[verania@webminal.org ~]$echo "world" >> hello.txt                                    
+[verania@webminal.org ~]$cat hello.txt                                                
+hello
+linux
+world
+[verania@webminal.org ~]$head -2 hello.txt                                            
+hello
+linux
+[verania@webminal.org ~]$head hello.txt                                               
+hello
+linux
+world
+[verania@webminal.org ~]$tail hello.txt
+hello
+linux
+world
+[verania@webminal.org ~]$stat hello.txt
+  File: ‘hello.txt’
+  Size: 18              Blocks: 8          IO Block: 4096   regular file
+Device: 821h/2081d      Inode: 90768450    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: (221364/ verania)   Gid: (221423/ verania)
+Context: guest_u:object_r:user_home_t:s0
+Access: 2020-10-30 18:40:38.987000000 +0100
+Modify: 2020-10-30 18:40:31.939000000 +0100
+Change: 2020-10-30 18:40:31.939000000 +0100
+ Birth: -
+[verania@webminal.org ~]$stat dir1
+  File: ‘dir1’                                                                        
+  Size: 6               Blocks: 0          IO Block: 4096   directory                 
+Device: 821h/2081d      Inode: 50334554    Links: 2                                   
+Access: (0775/drwxrwxr-x)  Uid: (221364/ verania)   Gid: (221423/ verania)            
+Context: guest_u:object_r:user_home_t:s0                                              
+Access: 2020-10-30 18:28:29.872000000 +0100                                           
+Modify: 2020-10-30 18:26:53.968000000 +0100                                           
+Change: 2020-10-30 18:26:53.968000000 +0100                                           
+ Birth: -                                                                             
+[verania@webminal.org ~]$  
